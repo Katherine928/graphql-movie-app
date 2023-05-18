@@ -15,7 +15,7 @@ interface Movie{
     id: ID!
     title: String!
     releaseYear: Int!
-    rating: Int!
+    rating: String!
     genre: Genre!
 }
 
@@ -23,7 +23,7 @@ type MovieSummary implements Movie{
     id: ID!
     title: String!
     releaseYear: Int!
-    rating: Int!
+    rating: String!
     genre: Genre!
 }
 
@@ -31,7 +31,7 @@ type MovieDetails implements Movie{
     id: ID!
     title: String!
     releaseYear: Int!
-    rating: Int!
+    rating: String!
     genre: Genre!
     reviews: [Review]!
 }
