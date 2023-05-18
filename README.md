@@ -1,7 +1,5 @@
 # graphql-movie-app
 
-# Project Name
-
 Project Name is a Java Spring Boot application that demonstrates the usage of GraphQL for building a GraphQL API.
 
 ## Features
