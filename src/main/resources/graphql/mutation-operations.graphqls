@@ -1,0 +1,4 @@
+type Mutation{
+    addToWatchList(input: WatchListInput!): WatchListResponse!
+    updateProfile(input: CustomerInput!): UserProfile
+}

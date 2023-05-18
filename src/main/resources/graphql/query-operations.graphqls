@@ -1,0 +1,5 @@
+type Query{
+    userProfile(id: ID!): UserProfile
+    movieDetails(id: ID!): MovieDetails
+    moviesByGenre(genre: Genre!): [MovieSummary]
+}

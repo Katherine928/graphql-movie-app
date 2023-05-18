@@ -1,0 +1,44 @@
+type WatchListResponse{
+    status: Status
+    watchList: [MovieSummary]!
+}
+
+type UserProfile{
+    id: ID!
+    name: String!
+    favoriteGenre: Genre!
+    watchList: [MovieSummary]!
+    recommended: [MovieSummary]!
+}
+
+interface Movie{
+    id: ID!
+    title: String!
+    releaseYear: Int!
+    rating: Int!
+    genre: Genre!
+}
+
+type MovieSummary implements Movie{
+    id: ID!
+    title: String!
+    releaseYear: Int!
+    rating: Int!
+    genre: Genre!
+}
+
+type MovieDetails implements Movie{
+    id: ID!
+    title: String!
+    releaseYear: Int!
+    rating: Int!
+    genre: Genre!
+    reviews: [Review]!
+}
+
+type Review {
+    id: ID,
+    comment: String,
+    rating: Int,
+    username: String
+}

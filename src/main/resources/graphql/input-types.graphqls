@@ -1,0 +1,10 @@
+input WatchListInput{
+    customerId: Int!
+    movieId: Int!
+}
+
+input  CustomerInput{
+    id: ID!
+    name: String!
+    favoriteGenre: Genre!
+}
