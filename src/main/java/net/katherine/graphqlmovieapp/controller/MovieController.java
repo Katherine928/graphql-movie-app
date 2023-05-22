@@ -5,6 +5,7 @@ import net.katherine.graphqlmovieapp.client.MovieClient;
 import net.katherine.graphqlmovieapp.dto.Customer;
 import net.katherine.graphqlmovieapp.dto.Genre;
 import net.katherine.graphqlmovieapp.dto.Movie;
+import net.katherine.graphqlmovieapp.dto.WatchListResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
@@ -29,6 +30,11 @@ public class MovieController {
     @SchemaMapping(typeName = "UserProfile")
     public Flux<Movie> recommended(Customer customer){
         return client.moviesByGenre(customer.getFavoriteGenre());
+    }
+
+    @SchemaMapping(typeName = "watchListResponse")
+    public Flux<Movie> watchList(WatchListResponse watchListResponse){
+        return client.getMoviesByIds(watchListResponse.getWatchList());
     }
 
     @QueryMapping
