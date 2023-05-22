@@ -2,14 +2,16 @@ package net.katherine.graphqlmovieapp.client;
 
 import net.katherine.graphqlmovieapp.dto.Genre;
 import net.katherine.graphqlmovieapp.dto.Movie;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
 import java.util.List;
 
+@Service
 public class MovieClient {
-
 
     private final WebClient client;
 
