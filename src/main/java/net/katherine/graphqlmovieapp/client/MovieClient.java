@@ -23,7 +23,7 @@ public class MovieClient {
 
     public Flux<Movie> getMoviesByIds(List<Integer> ids) {
 
-        return ids.isEmpty() ? Flux.empty() : getMoviesByIds(ids);
+        return ids.isEmpty() ? Flux.empty() : moviesByIds(ids);
 
     }
 
