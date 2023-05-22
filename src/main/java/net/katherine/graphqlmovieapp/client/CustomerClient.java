@@ -28,16 +28,16 @@ public class CustomerClient {
                 .bodyToMono(Customer.class);
     }
 
-    public Mono<Customer> updateCustomer(CustomerInput customerInput) {
-        return client.put()
+    public Mono<Customer> updateCustomer(CustomerInput customerInput){
+        return this.client.put()
                 .uri("{id}", customerInput.getId())
                 .bodyValue(customerInput)
                 .retrieve()
                 .bodyToMono(Customer.class);
     }
 
-    public Mono<List<Integer>> addToWatchList(WatchListInput watchListInput) {
-        return client.post()
+    public Mono<List<Integer>> addToWatchList(WatchListInput watchListInput){
+        return this.client.post()
                 .uri("watchlist")
                 .bodyValue(watchListInput)
                 .retrieve()

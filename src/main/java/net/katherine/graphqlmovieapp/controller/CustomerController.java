@@ -24,14 +24,15 @@ public class CustomerController {
     }
 
     @MutationMapping
-    private Mono<Customer> updateProfile(@Argument CustomerInput customerInput) {
-        return client.updateCustomer(customerInput);
+    public Mono<Customer> updateProfile(@Argument CustomerInput input) {
+        return this.client.updateCustomer(input);
     }
 
     @MutationMapping
-    public  Mono<WatchListResponse> addToWatchList(@Argument WatchListInput watchListInput) {
-        return client.addToWatchList(watchListInput)
+    public Mono<WatchListResponse> addToWatchList(@Argument WatchListInput input){
+        return this.client.addToWatchList(input)
                 .map(list -> WatchListResponse.create(Status.SUCCESS, list))
+                .doOnError(System.out::println)
                 .onErrorReturn(WatchListResponse.create(Status.FAILURE, Collections.emptyList()));
     }
 
